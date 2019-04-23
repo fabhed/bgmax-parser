@@ -1,0 +1,27 @@
+{
+  "name": "bgmax-parser",
+  "version": "1.0.0",
+  "description": "A Javascript Parser for Bg Max",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minifjurt123/bgmax-parser.git"
+  },
+  "keywords": [
+    "bgmax"
+  ],
+  "author": "Fabian Hedin <fabian.hedin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/minifjurt123/bgmax-parser/issues"
+  },
+  "homepage": "https://github.com/minifjurt123/bgmax-parser#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
+  }
+}
