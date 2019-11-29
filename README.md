@@ -10,7 +10,8 @@ A Parser that reads a string from a Bg Max file with Javascript.
 const fs = require('fs');
 const parser = require('bgmax-parser');
 
-const content = fs.readFileSync('./node_modules/bgmax-parser/example-files/bankgiroinbetalningar_exempelfil_avtal-om-ocr-kontroll_checksiffra_langd_sv.txt', 'latin1');
+let pathToFile = './node_modules/bgmax-parser/example-files/bankgiroinbetalningar_exempelfil_avtal-om-ocr-kontroll_checksiffra_langd_sv.txt'
+const content = fs.readFileSync(pathToFile, 'latin1'); // Bankgiro uses latin1 encoding
 const parsedBgMax = parser(content);
 console.log(parsedBgMax)
 ```

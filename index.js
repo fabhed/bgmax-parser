@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable func-names */
 const { entryDefinitions } = require('./config');
 
 // Extending String prototype with left and right trim methods
@@ -97,7 +95,6 @@ function parseLine(line, lineNumber, entryObjForFormatting) {
       name: pName, trimmedValue, rawValue, value: formattedValue, contentFormat, paddingFormat,
     });
   });
-  // eslint-disable-next-line consistent-return
   return { entryObj, entryToFormat };
 }
 
@@ -112,7 +109,7 @@ module.exports = function (bgMaxStr) {
     if (lineNumber > 10) return;
     const { entryObj, entryToFormat } = parseLine(line, lineNumber);
     if (entryToFormat) {
-      entriesToFormat.push({ entryToFormat, entryObj });
+      entriesToFormat.push({ entryObj, entryToFormat });
     } else {
       parsedEntries.push(entryObj);
     }
