@@ -98,8 +98,14 @@ function parseLine(line, lineNumber, entryObjForFormatting) {
   return { entryObj, entryToFormat };
 }
 
-// The main parser function
-module.exports = function (bgMaxStr) {
+
+/**
+ * Parses Bankgirots Bg Max
+ *
+ * @param {String} bgMaxStr A string representing a raw Bg Max text file.
+ * @returns {Object[]} An array of Objects containing all transactions
+ */
+function parser(bgMaxStr) {
   const parsedEntries = [];
   const allLines = bgMaxStr.split(/\r\n|\n|\r/); // Split every line
   const entriesToFormat = [];
@@ -122,3 +128,5 @@ module.exports = function (bgMaxStr) {
   });
   return parsedEntries;
 };
+
+module.exports = parser;
