@@ -391,7 +391,7 @@ module.exports.entryDefinitions = [
         length: 8,
         startPos: 72,
         endPos: 79,
-        format: 'A:-',
+        format: 'N:h0',
       },
       depositType: {
         length: 1,
