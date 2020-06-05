@@ -8,3 +8,19 @@ test('checks if example file is parsed as expected', () => {
   const parsedBgMax = parser(content);
   expect(parsedBgMax).toEqual(expectedObject);
 });
+
+
+test('check if incorrect input is detected', () => {
+  const empty = () => parser('');
+  expect(empty).toThrow();
+
+  const notString = () => parser(1);
+  expect(notString).toThrow();
+
+  const missingStartPost = () => parser('a01BGMAX');
+  expect(missingStartPost).toThrow();
+
+  const missingEndRecord = () => parser('01BGMAX               0120040525173035010331P                                   ');
+  // console.log(invalid()[0].properties);
+  expect(missingEndRecord).toThrow();
+});
