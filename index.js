@@ -156,7 +156,7 @@ function makeTree(parsedEntries) {
     // This will remove and format the next payment/deduction
     function extractPaymentDeduction() {
       const pOrDIndex = entriesInSection.findIndex(e => codes.includes(e.code));
-      const pOrD = entriesInSection.splice(pOrDIndex, 1);
+      const [pOrD] = entriesInSection.splice(pOrDIndex, 1);
       // Payment or Deduction will end on either the next
       // Payment or Deduction or the Section end (15)
       const endCodes = codes.concat(['15']);
@@ -173,7 +173,9 @@ function makeTree(parsedEntries) {
         cursor += 1;
       }
       return {
-        properties: Object.assign({}, pOrD[0].properties),
+        code: pOrD.code,
+        name: pOrD.entryName,
+        properties: Object.assign({}, pOrD.properties),
         extraInfo: children,
       };
     }
