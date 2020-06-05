@@ -202,8 +202,6 @@ function makeTree(parsedEntries) {
     properties: Object.assign({}, start.properties, end.properties),
     sections: sectionNodes,
   };
-  // console.log(tree.children);
-  console.log(tree);
   return tree;
 }
 
